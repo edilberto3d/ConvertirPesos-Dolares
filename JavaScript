@@ -1,0 +1,26 @@
+function convertir() {
+    // Obtener los valores de los campos
+    var p = parseFloat(document.getElementById("pesos").value);
+    var d = parseFloat(document.getElementById("dolares").value);
+    var t = parseFloat(document.getElementById("tasa-cambio").value);
+  
+    // Realizar la conversión de Pesos a Dólares
+    if (!isNaN(p)) {
+      var conversionDolares = p / t;
+      document.getElementById("dolares").value = conversionDolares.toFixed(2);
+    }
+  
+    // Realizar la conversión de Dólares a Pesos
+    if (!isNaN(d)) {
+      var conversionPesos = d * t;
+      document.getElementById("pesos").value = conversionPesos.toFixed(2);
+    }
+  }
+  
+  function limpiar() {
+    // Limpiar los campos
+    document.getElementById("pesos").value = "";
+    document.getElementById("dolares").value = "";
+    document.getElementById("tasa-cambio").value = "";
+    document.getElementById("resultado").textContent = "";
+  }
